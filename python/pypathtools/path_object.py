@@ -7,5 +7,5 @@ from pypathtools.pad_object import PadObject
 from pypathtools.range_object import RangeObject
 
 
-class DiskObject(object):
+class PathObject(object):
     pass
