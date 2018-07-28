@@ -5,6 +5,10 @@ hash_regex = re.compile(r"\.(#+|@+)|\.[%\$F]+(\d+)d?")  # frame padding eg ####/
 flag_regex = re.compile(r"^-+[a-zA-Z]")  # A flag is a - followed by a letter
 
 
+"((?P<start>-?[0-9]+)-(?P<end>-?[0-9]+)x(?P<by>[0-9]+))|((\g'start')-(\g'end'))|((?<!x)(\g'start')(?!-?x))"
+
+re.compile(r'(-?[0-9]+)-?(-?[0-9]+)?x?([0-9]+)?')
+
 def get_files_on_filesystem(search_str):
     """Search for all files that match the given search path.
     
