@@ -79,7 +79,12 @@ def getRangeStr(items):
 from pypathtools.range_object import SubRange
 print 'foo'
 r1 = SubRange(1,10)
-r1.add_sub_range(SubRange(2, 8, 2))
-for item in r1.range():
+r2 = SubRange(2, 8, 2)
+r3 = SubRange(12,26,7)
+r3.add_sub_range(SubRange(3,5))
+r2.add_sub_range(SubRange(9,9))
+r1.add_sub_range(r2)
+r1.add_sub_range(r3)
+for item in sorted(r1, reverse=True):
     print item
-
+print r1
